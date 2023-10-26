@@ -1,0 +1,32 @@
+In this Python Program, we will be discussing how to write a program to print Basic Double Incrementing Triangle Pattern. In this pattern, there are ‘num’ numbers of rows that are present which is entered by the user. We will use the ‘k’ variable which is initially initialized by 3 for printing number increasing order. With every iteration of Second for loop, we will increase the k variable by 1. So, Users have to enter a single value, that will consider as a number of rows and columns of the pattern. With the help of “for loop”, we will print the Basic Double Incrementing Triangle Pattern.
+
+Python Program for Basic double incrementing Triangle Pattern
+Working:
+Step 1. Start
+
+Step 2. Take number of rows as input from the user and stored it into num.
+
+Step 3. Take a variable ‘k’ and initialize it as 3.
+
+Step 4. Run a loop ‘i’ number of times to iterate through all the rows which is Starting from i=0 to num.
+
+Step 5. Run a nested loop inside the main loop for printing spaces which is starting from j=0 to i+i.
+
+Step 6. Print ‘k’ inside the nested loop for each row.
+
+Step 7. Outside the Second for loop, Increase k variable by 1.
+
+Step 8. Move to the next line by printing a new line using print() function.
+
+Stop 9. Stop
+
+Python Program:
+
+num = int(input("Enter the Number: "))
+k = 3
+
+for i in range(0, num):
+    for j in range(0, i+1):
+        print(k, end="")
+        k = k + 1
+    print()
