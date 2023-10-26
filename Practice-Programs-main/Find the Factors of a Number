@@ -1,0 +1,94 @@
+Given an integer input the objective is to find all the factors of the given number. To do so we’ll run a loop and check if any number within the range is a factor of the input number. We’ll use loops and recursion to check for factors. While using recursion we’ll form a recursion tree of all the factors branching out of the number which acts as the node. Here are some of the methods to Find the Factors of a Number in Python Language
+
+Method 1 : Using [1, number] as the range
+Method 2 : Using [1, sqrt(number)] as the range
+We’ll discuss the above mentioned methods in detail in the upcoming sections.
+
+
+--------------------------------Method 1: Using [1, number] as the Range--------------------------------
+Working
+In this method we’ll use for loop to iterate through the given range and check for factors of the given number.
+
+For an integer input as number, we perform the following operations
+
+Run a while loop for the condition iteration
+Check if the number is divisible by the current iter variable.
+Increment the iter variable.
+Print out all the factors.
+Let’s implement the above mentioned logic in Python Language.
+
+Time Complexity : O(n) 
+Auxiliary Space : O(1)
+
+Python Code
+
+# method to print the divisors
+def printDivisors(n) :
+    i = 1
+    while i <= n :
+        if (n % i==0) :
+            print (i,end=" ")
+        i = i + 1
+         
+# Driver method
+print ("The divisors of 100 are: ")
+printDivisors(100)
+Output
+The divisors of 100 are: 
+1 2 4 5 10 20 25 50 100
+Related Pages
+Factorial of a number
+
+Power of a number
+
+Factor of a number
+
+Finding Prime Factors of a number
+
+Strong number
+
+Perfect number
+
+-----------------------------------Method 2: Using [1, sqrt(number)] as the Range------------------------------------------------
+Working
+In this method we’ll use loops to check for factors of a number. We’ll run a while loop with the condition i<sqrt(number) and check for factors within the range.
+
+For an integer input number, we perform the following operations,
+
+Run a while loop with condition iter<=sqrt(number).
+Check if the number is divisible by the iter variable.
+increment the iter variable by 1.
+Append the factors if any to the list.
+Print out the list containing all the factors.
+Let’s implement the above mentioned logic in Python Language.
+
+Time Complexity : O(sqrt(n)) 
+Auxiliary Space : O(1)
+
+Python Code
+
+import math
+ 
+# method to print the divisors
+def printDivisors(n) :
+     
+    # Note that this loop runs till square root
+    i = 1
+    while i <= math.sqrt(n):
+         
+        if (n % i == 0) :
+             
+            # If divisors are equal, print only one
+            if (n / i == i) :
+                print (i,end=" ")
+            else :
+                # Otherwise print both
+                print (i , int(n/i), end=" ")
+        i = i + 1
+ 
+# Driver method
+print ("The divisors of 100 are: ")
+printDivisors(100)
+Output
+The divisors of 100 are: 
+1 100 2 50 4 25 5 20 10
