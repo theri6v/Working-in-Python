@@ -1,0 +1,25 @@
+In this Python Program, we will be discussing about how to write a program to print Numbered Square Pattern. In this pattern, there are n*n rows and columns are present. So, In this Pattern, there are number of “1” are equal for rows and columns.Then, User have to enter only one value, value will be considered as number of rows and columns of the pattern. With the help of “for loop”, we will print the Numbered Square Pattern.
+
+Python Program for Printing Numbered Square Pattern
+Working:
+Step 1. Start
+
+Step 2. Take number of rows as input from the user and stored it into num.
+
+Step 3. Run a for loop starting from 0 to user entered num value.
+
+Step 4. Inside for loop, Run another for loop starting from 0 to num as well.
+
+Step 5. Print ‘1’ inside the nested loop to print ‘1’s in all the columns of a row.
+
+Step 6. Move to the next line by printing a new line using print() function.
+
+Stop 7. Stop
+
+Python Program:
+num = int(input("Enter the Number: "))
+
+for i in range(0, num):
+    for j in range(0, num):
+        print("1", end="")
+    print()
