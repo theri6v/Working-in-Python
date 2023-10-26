@@ -1,0 +1,84 @@
+In this section, we learn about  Diamond numbers pattern printing. Here we will see how to use loops to print the numbers starting from 1 up to N in the form of diamond. the diamond will be made using two triangles one triangle will be printed by one loop and other by another loop.  Both the triangles in Diamond numbers pattern printing are opposite from each other that why we need to take two loop for print diamond pattern. 
+
+diamond number pattern
+1. Write a program to print the following pattern
+Enter the number of row 5
+
+    1
+   123
+  12345
+ 1234567
+123456789
+ 1234567
+  12345
+   123
+    1
+
+Working
+Step 1- Initialize first outer loop for the print the first pyramid, this loop work from 1 to row.
+
+Step 2- Now we need two loop inside the outer loop .
+
+Step 3- The first inner loop work on printing space, so this loop work from 1 to n-i, because we need to reduce space after every row.
+
+Step 4- The second inner loop work on the printing number, so it will start from 1 to 2*i-1, because we need to increment number with 2 in every row.
+
+Step 5- Now initialize second outer loop which is work for the second opposite pyramid.this loop start from row-1 to 1
+
+Step 6 – The inner loop of the second pyramid work same as the first outer loop.
+
+Step 7- Stop. 
+
+ 
+
+Python
+
+n=5
+for i in range(n):
+    x=1
+    for j in range(2*n-1):
+        if(i+j<n-1 or i+j>=n+2*i):   
+            print(” “,end=“”)
+        else:
+            print(x,end=“”)
+            x+=1 
+    print()
+for i in range(n-1):
+    x=1
+    for j in range(2*n-1):
+        if(i+j<=2*i or i+j>=(2*n-2)):      
+            print(” “,end=“”)
+        else:
+            print(x,end=“”)
+            x+=1 
+    print()
+2. Write a program to print the following pattern
+Enter the number of row 5
+
+    1
+   222
+  33333
+ 4444444
+555555555
+ 4444444
+  33333
+   222
+    1
+
+Python
+
+n=5
+for i in range(n):
+    for j in range(2*n-1):
+        if(i+j<n-1 or i+j>=n+2*i):   
+            print(” “,end=“”)
+        else:
+            print(i+1,end=“”)
+    print()
+for i in range(n-1):
+    for j in range(2*n-1):
+        if(i+j<=2*i or i+j>=(2*n-2)):      
+            print(” “,end=“”)
+        else:
+            print(n-1-i,end=“”)
+    print()
