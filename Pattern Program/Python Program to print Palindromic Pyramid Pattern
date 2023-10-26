@@ -1,0 +1,58 @@
+The numbers whose reverse is same as the original number are termed as Palindrome.
+
+For Example: A number 12321 is a palindromic number because its reverse is 12321 which is equal to the original number.
+
+Here we have to print the Pyramid of Palindromes. The number of elements in each row increases as we go down.
+
+Palindromic Pyramid Pattern
+Algorithm
+Take n as input for number of rows
+Call palindromicPyramid(n)
+palindromicPyramid(rows):
+Traverse i from i to rows+1  and do step 2 to step 10 (Outer loop for each row)
+Traverse j for i to rows+1 and do step 3 (1St inner loop to print blank spaces)
+print single blank space ” “
+End of 1St inner loop
+Traverse j for i to i+1 and do step 6 (2nd inner loop to print first half of palindrome)
+print j
+End of 2nd inner loop
+Traverse j for i-1 to 0 and do step 9 (3rd inner loop to print second half of the palindrome)
+print j
+End of 3rd inner loop
+End of Outer Loop
+Python Code
+
+#function for printing palindromic Pyramid
+def palindromicPyramid(rows):
+    #outer loop for each row
+    for i in range(0,rows+1):
+        #1st inner loop for printing blank spaces in each row
+        for j in range(i,rows+1):
+                print(”  “,end=” “)
+        #2nd inner loop for printing increasing half in each row
+        for j in range(1,i+1):
+            print(j,end=” “)
+         #3rd inner loop for printing decreasing half in each row
+        for j in range(i-1,0,-1):
+            print(j,end=” “)
+        #print new line character for next row
+        print()
+                
+#input
+n=int(input(“Enter the number of rows :”))
+#function call
+palindromicPyramid(n)
+
+
+Output:
+
+Enter the number of rows :8
+                           
+                        1 
+                      1 2 1 
+                    1 2 3 2 1 
+                  1 2 3 4 3 2 1 
+                1 2 3 4 5 4 3 2 1 
+              1 2 3 4 5 6 5 4 3 2 1 
+            1 2 3 4 5 6 7 6 5 4 3 2 1 
+          1 2 3 4 5 6 7 8 7 6 5 4 3 2 1 
