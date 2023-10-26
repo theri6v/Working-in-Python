@@ -1,0 +1,38 @@
+In this Python Program, we will be discussing how to write a program to print the Inverted Incrementing Triangle Pattern. In this pattern, there are n numbers of rows are present which are entered by the user. We will use the ‘count’ variable which is initially initialized by 3 for printing number decreasing order. First, increase the count variable to its max value. Then, With every iteration of for loop, we will decrease the count variable by 1. So, Users have to enter a single value, that will be determined as a number of rows and columns of the pattern. With the help of “for loop”, we will print the Inverted Incrementing Triangle Pattern.
+
+Python Program for Inverted Incrementing Triangle Pattern
+Working:
+Step 1. Start
+
+Step 2. Take number of rows as input from the user and stored it into num.
+
+Step 3. Take a variable ‘count’ and initialize it as 0.
+
+Step 4. Run a for loop starting from 0 to num value.
+
+Step 5. Inside above for loop, increase count variable by i.
+
+Step 6. Run a loop ‘i’ number of times to iterate through all the rows which is Starting from i=0 to num.
+
+Step 7. Run a nested loop inside the main loop for printing spaces which is starting from j=0 to num-i.
+
+Step 8. Print ‘count’ inside the nested loop for each row.
+
+Step 9. Inside above Nested for loop, Decrease count variable by 1.
+
+Step 10. Move to the next line by printing a new line using print() function.
+
+Step 11. Stop
+
+Python Program:
+num = int(input("Enter the Number: "))
+
+count = 0
+for i in range(0, num):
+    count = count + i
+
+for i in range(0, num):
+    for j in range(0, num-i):
+        print(count, end="")
+    count = count - 1
+    print()
