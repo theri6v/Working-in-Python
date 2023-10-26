@@ -1,0 +1,25 @@
+In this Python Program, we will be discussing about how to write a program to print Incrementing Number Square Pattern. In this pattern, there are n*n rows and columns are present. This pattern follows number increment order in square form. So, User have to enter a single value, that will be determine as a number of rows and columns of the pattern. With the help of “for loop”, we will print the Incrementing Number Square Pattern.
+
+Python Program for Printing Incrementing Number Square Pattern
+Working:
+Step 1. Start
+
+Step 2. Take number of rows as input from the user and stored it into num.
+
+Step 3. Run a for loop starting from 1 to user entered num+1 value.
+
+Step 4. Inside for loop, Run another for loop starting from 0 to num as well.
+
+Step 5. Print ‘i’ inside the nested loop for each row.
+
+Step 6. Move to the next line by printing a new line using print() function.
+
+Stop 7. Stop
+
+Python Program:
+num = int(input("Enter the Number: "))
+
+for i in range(1, num+1):
+    for j in range(0, num):
+        print(i, end="")
+    print()
