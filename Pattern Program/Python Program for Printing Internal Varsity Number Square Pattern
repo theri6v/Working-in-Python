@@ -1,0 +1,33 @@
+In this Python Program, we will be discussing about how to write a program to print Internal Varsity Number Square Pattern. In this pattern, there are n*n rows and columns are present.First, We will check if i == 0 or j == 0 or j == cols-1 or i == rows – 1, this condition is satisfied, then we will print the border with number “3”. Otherwise, Sequence of a number staring from 1.So, User have to enter a single value, that will be determine as a number of rows and columns of the pattern. With the help of “for loop”, we will print the Internal Varsity Number Square Pattern.
+
+Python Program for Printing Internal Varsity Number Square Pattern
+Working:
+Step 1. Start
+
+Step 2. Take number of rows input from the user and store it in any variable (‘rows’ in this case).
+
+Step 3. Take number of coloum input from the user and store it in any variable (‘cols’ in this case).
+
+Step 4. Run a loop ‘i’ number of times to iterate through all the rows which is Starting from i=0 to rows.
+
+Step 5. Run a nested loop inside the main loop for printing spaces which is starting from j=0 to cols.
+
+Step 6. Check if i == 0 or j == 0 or j == cols-1 or i == rows – 1, this condition is satisfied, then print “3”.
+
+Step 7. Otherwise print “i”.
+
+Step 8. Move to the next line by printing a new line using print() function.
+
+Stop 10. Stop
+
+Python Program:
+rows = int(input("Enter the Number of rows: "))
+cols = int(input("Enter the Number of cols: "))
+
+for i in range(0, rows):
+    for j in range(0, cols):
+        if i == 0 or j == 0 or j == cols-1 or i == rows - 1:
+            print("3", end="")
+        else:
+            print(i, end="")
+    print()
