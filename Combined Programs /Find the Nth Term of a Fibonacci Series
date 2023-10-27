@@ -1,0 +1,55 @@
+Nth Term of a Fibonacci Series
+On this page we will learn how to Find the Nth Term of a Fibonacci Series  in Python.
+
+Using two Different Methods
+
+Using Loop
+Using Recursion
+Input : 6
+Output : 5
+Explanation : Fibonacci series is the sum of the previous two terms, so if we enter 6 as the input in the program, so we should get 5 as the output.
+Factorial of a Number in Python
+Method 1 : Using Loop
+Algorithm
+Start
+If n is less then 2 return n
+Initialize a array with value 0 & 1 respectively named fs
+Use  a for loop to iterate between range 1 to n using variable i
+For each iteration append the sum of current element and previous element to fs
+Return the Nth element of fs
+Python Program to find Nth Term of a Fibonacci Series
+Python Code
+Run
+def Fibonacci(n):
+    if n < 2:
+        return n
+    fs = [0, 1]
+    for i in range(1, n):
+        fs.append(fs[i] + fs[i - 1])
+    return fs[n]
+
+
+n = 6
+print(Fibonacci(n-1))
+Output :
+
+5
+Method 2 : Using Recursion
+Algorithm
+Start by calling the function for n
+If n is less then 2 return n
+If n>0:
+Return the sum of recursive call for same function with value  n – 1  &  n – 2
+Python Code
+Run
+def fib(n):
+	if n < 2:
+		return n
+	return fib(n - 1) + fib(n - 2)
+
+
+n = 6
+print(fib(n-1))
+Output :
+
+5
