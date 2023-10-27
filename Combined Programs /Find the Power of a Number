@@ -1,0 +1,89 @@
+Given two integer inputs the objective is to Find the Power of a Number in Python Language. We usually multiply the number with itself for power number of times to get the power of a the number using loops and recursion. In Python language there are two other methods we can use to find the power of a Number. Here are some of the method we can use to Find the power of a Number in Python,
+
+Method 1: Using Pow() Function
+Method 2: Using Simple Iteration
+Method 3: Using Python Operator
+Method 4: Using Recursion
+We’ll discuss the above mentioned methods in the sections below.
+
+
+Power of a Number Using Recursion in C
+
+-----------------------------------Method 1: Using pow() Function----------------------------------------
+Working
+In this method we’ll use the inbuilt function pow() to find the power of a Number. The function takes the number and the power as the argument and returns the number raised to the power.
+
+For the given two integers as inputs, we perform the following operations
+
+Call the pow() function and print the output.
+Let’s implement the above mentioned logic in Python Language.
+
+Python Code
+
+num, power = 3, 2
+print(pow(num,power))
+
+Output
+9
+
+---------------------------------------Method 2: Using Simple Iteration----------------------------------
+
+Working
+In this method we’ll use the loops to iterate through the number of multiplications required to raise the input number to the given power. Here we’ll use the for loop and run it until the power is reaches, meanwhile we multiple the number with itself with each iteration.
+
+For a given integer variables as inputs, we perform the following operations,
+
+Run a for loop from 0 to power.
+Keep multiplying the number with itself with each iteration.
+Print the final output.
+Let’s implement the above mentioned logic in Python Language.
+
+Python Code
+
+num, power = 3, 2
+output = 1
+for i in range(power):
+  output*=num
+print(output)
+
+Output
+9
+------------------------Method 3: Using Python Operator----------------------------
+
+Working
+In this method we’ll use the python operator ** to calculate the power of a Number.
+
+Given two integer variables as inputs, We perform the following operations,
+
+Print number**power.
+Let’s implement the above logic in Python Language.
+
+Python Code
+Run
+num, power = 3, 2
+print(num**power)
+
+Output
+9
+--------------------Method 4: Using Recursion--------------------------
+Working
+In this method we’ll use recursion to calculate the power of a Number. To know more about recursion, check out our page Recursion in Python.
+
+For the given two inputs, we’ll perform the following operations,
+
+Define a recursion function with base case as power == 0.
+Set recursive step call as num * powerrecur(num, power -1).
+Print the returned value.
+Let’s implement the above logic in Python Language.
+
+Python Code
+
+num, power = 3, 2
+def powerrecur(num,power):
+  if power == 0:
+    return 1
+  return num * powerrecur(num,power-1)
+print(powerrecur(num,power))
+
+Output
+9
