@@ -1,0 +1,79 @@
+Given an integer value the objective of the code is to sum up all the numbers until the input integer number. To do so we usually use iteration, we iterate through the numbers until the input number is reached while appending the number to the sum variable. Here are some methods to solve the above mentioned problem
+
+Method 1: Using for Loop
+Method 2: Using Formula
+Method 3: Using Recursion
+We’ll discuss the above methods in detail in the sections below.
+
+
+Related Pages
+Sum of numbers in a given range
+
+Greatest of two numbers
+
+Greatest of the Three numbers
+
+Leap year or not
+
+Prime number
+
+**Method 1: Using for Loop
+In this method we’ll use for loops to iterate through all the numbers until the integer input “number” is reached.
+
+Working
+For an integer input “number” we do the following
+
+Initialize the required variables.
+Using for loop iterate from 0 to number+1.
+Meanwhile append the number to sum variable.
+Print the sum variable.
+Let’s implement the above logic in Python code.
+
+Python Code
+number,sum = 6,0
+for i in range(number+1):
+  sum+=i
+print(sum)
+
+Output
+21
+
+**Method 2: Using the Formula
+In this method we’ll use the formula for finding the sum of N integers in a series from series and sequences i.e sum = number * ( number + 1 ) / 2 to calculate the sum until the given integer input.
+
+Working
+For an integer input “number”  we perform the following steps
+
+Initialize sum variable as sum = (number * ( number + 1 ) /2 ).
+Print the sum variable.
+Let’s implement the above logic in Python Language.
+
+Python Code
+number = 6
+sum = int((number * (number + 1))/2)
+print(sum)
+Output
+21
+
+**Method 3: Using Recursion
+In this method we’ll use recursion to recursively iterate through the number while appending them to the sum variable until the number is reach which here act as the base case. To learn more about recursion, check out Recursion in Python.
+
+Working
+For an integer input “number” we do
+
+Initialize the required variables.
+Define a recursive function with base case as number ==0.
+Set the step recursive call as number + recursum( number – 1 ).
+Call the recursive function recursum() and print the returned value.
+Let’s implement the above logic using Python Language.
+
+Python Code
+def recursum(number):
+  if number == 0:
+    return number
+  return number + recursum(number-1)
+number, sum = 6,0
+print(recursum(number))
+
+Output
+21
