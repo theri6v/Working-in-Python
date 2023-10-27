@@ -1,0 +1,111 @@
+Given an integer input as the year, the objective is to Check if a Year is a Leap Year or Not in Python Language. To do so we’ll check each condition mentioned below in the blue box. It either of the conditions is satisfied, the year is a leap year. It’s not otherwise. Here are some methods to check whether or not it’s a leap year
+
+Method 1: Using if-else statements 1
+Method 2: Using if-else statements 2
+Method 3 : Using Ternary Operator
+Method 4 : Using Calendar Mode
+Method 5 : Using Lamda Function
+We’ll discuss all the above mentioned methods in detail in the upcoming sections. Before going for the approach read out the blue box below for better understanding of the concept.
+
+Conditions for a Leap Year
+Here are the two conditions that any year must satisfy to be called a leap year 
+1. The year must be perfectly divisible by 400.
+2. The number must be divisible by 4 but not by 100.
+
+Related Pages
+Greatest of two numbers
+
+Greatest of the Three numbers
+
+Prime number
+
+Prime number within a given range
+
+Sum of digits of a number
+
+**Method 1: Using if-else Statements 1
+In this method we’ll use the if-else statements to check whether or not the input integer satisfies either of the conditions. To learn more about control statements in python, check out if-else control statements in Python.
+
+Working
+For a User Input year we do
+
+Check if the year variable is divisible by 400.
+Check if the year variable is divisible only by 4 and not 100.
+If the above mentioned conditions are satisfied, prints “Leap Year”, print “Not a Leap Year” otherwise.
+Let’s implement the above logic in Python Language.
+
+Python Code
+
+year = 2000
+
+if (year%400 == 0) or (year%4==0 and year%100!=0):
+    print("Leap Year")
+else:
+    print("Not a Leap Year")
+
+Output
+Leap Year
+
+**Method 2: Using if-else Statements 2
+In this method we’ll use the if-else statements to check whether or not the input integer satisfies either of the conditions. This method is a modified and simpler version of the previous method.
+
+Working
+For a User Input year we do
+
+The input is stored in an int type variable say year.
+year is checked for being a leap year or not with the following condition if( ((year % 4 == 0)&&(year % 100 != 0)) || (year % 400==0) )
+If the above condition is true then input is a leap year otherwise input is not a leap year.
+Let’s implement the above logic in Python Language.
+
+Python Code
+
+year = 2000
+if( ((year % 4 == 0) and (year % 100 != 0)) or (year % 400==0) ):
+    print("Leap Year")
+else:
+    print("Not leap Year")
+
+Output:
+Leap Year
+Prime Course Trailer
+
+ 
+**Method 3: Using Ternary Operator
+In this method we’ll use ternary operator in Python
+
+Python Code
+
+def check_leap(year): 
+    return (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0) 
+
+year = int(input("Enter a year: ")) 
+
+print(f"{year} is leap year" if check_leap(year) else f"{year} is not leap year")
+
+**Method 4: Using Calendar Module
+In this method we’ll use calendar mode in python
+
+Python Code
+
+import calendar
+
+year = int(input("Enter a year: "))
+
+if calendar.isleap(year):
+    print(year, " is a leap year")
+else:
+    print(year, "is not a leap year.")
+
+
+**Method 5: Using Lamda Function
+In this method we’ll use lamda function in python
+
+
+is_leap_year = lambda year: (year % 4 == 0 and year % 100 != 0) or (year % 400 == 0)
+
+year = int(input("Enter a year: "))
+
+if is_leap_year(year):
+    print(year, " is a leap year")
+else:
+    print(year, "is not a leap year.")
