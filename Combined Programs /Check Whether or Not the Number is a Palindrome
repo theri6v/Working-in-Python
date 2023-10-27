@@ -1,0 +1,258 @@
+Given an integer input the objective is to check whether or not the given integer number as an input is palindrome or not.
+
+For a number to be a Palindrome, the number must be the same when reversed. If the number doesn’t match the reverse of itself, the number is not a Palindrome.
+
+Method 1:  Using Simple Iteration.
+Method 2: Using String Slicing.
+Method 3: Using Recursion
+Method 4:  Using Character matching
+Method 5: Using Character matching updated
+Method 6: Using Built-in reversed function
+Method 7:  Building reverse one char at a time
+Method 8: Using Flag and backward reading
+Method 9: Bonus using backward slicing
+We’ll discuss the above-mentioned methods in detail in the sections below. Don’t forget to check the blue box mentioned below for better understanding of the problem.
+
+Palindromic Numbers
+The Numbers that when reversed is the same as the original number itself are known as Palindromic Numbers.
+Number is Palindrome or not in C
+
+**Method 1: Using Simple Iteration
+Working
+For a given integer variable, we perform the following operations,
+
+Run a While loop with condition as temp number < 0.
+Using modulo operator, extract the last digit from the number.
+Using the formula reverse = reverse * 10 + remainder , we’ll keep updating the reverse variable.
+Using the divide operator, we’ll shorten the number.
+Check if the reversed number matches the original number.
+Let’s implement the above mentioned code in Python Language.
+
+Python Code
+
+num = 1221
+temp = num
+reverse = 0
+while temp > 0:
+    remainder = temp % 10
+    reverse = (reverse * 10) + remainder
+    temp = temp // 10
+if num == reverse:
+  print('Palindrome')
+else:
+  print("Not Palindrome")
+
+Output
+ Palindrome
+
+**Method 2: Using String Slicing
+Working
+In this method we’ll convert the number to string format and reverse the string. We’ll check if the reversed number matches the original one at the end.
+
+For an integer input number, we perform the following operations,
+
+Convert the number to string format using str() function.
+Using string slicing, reverse the number.
+Check if the reversed number matches the original number.
+Let’s implement the above mentioned logic in Python Language.
+
+Python Code
+
+num = 1234
+reverse = int(str(num)[::-1])
+
+if num == reverse:
+  print('Palindrome')
+else:
+  print("Not Palindrome")
+
+Output
+Not Palindrome
+
+Program to find Sum of digits of number
+
+Program to reverse a number
+
+Program to check armstrong number
+
+Armstrong number in a given range
+
+Fibonacci series up to n numbers
+
+
+**Method 3: Using Recursion
+Working
+In this method we’ll use recursion. To know more about recursion, check our page, Recursion in Python.
+
+For a given integer number as input we perform the following,
+
+Define a function recurrev() which takes the number and the reverse variable as arguments.
+Set the base case as number == 0 and the step recursive call as recurrev(number//10,reverse).
+Check if the returned value matches the original number.
+Let’s implement the above mentioned logic in Python Language.
+
+Python Code
+
+def recurrev(number, rev):
+    if number == 0:
+        return rev
+
+    remainder = int(number % 10)
+    rev = (rev * 10) + remainder
+
+    return recurrev(int(number / 10), rev)
+
+
+num = 12321
+reverse = 0
+reverse = recurrev(num, reverse)
+
+print(str(num) + " is: ", end="")
+print("Palindrome") if reverse == num else print("Not Palindrome")
+Output
+ Palindrome
+
+**Method 4: Using Character matching
+Working
+For string str iterate on the whole check if we find any condition such that – 
+
+str[i] != str[len(str) – i – 1]
+If yes then its not a palindrome
+Basically, we are checking ‘i’th character is the same as ‘i’th character from the end or not
+
+Run
+def checkPalindrome(str):
+
+    # check if str[i] is same as str[len(str) - i - 1]
+    # for whole string
+    for i in range(0, len(str)):
+
+        # Basically, we are checking i-th character is
+        # same as i-th character from the end or not
+        if str[i] != str[len(str) - i - 1]:
+            return False
+
+    return True
+
+
+# main function
+s = "kayak"
+
+print("Palindrome") if checkPalindrome(s) else print("Not Palindrome")
+Output
+ Palindrome
+
+**Method 5: Using Character matching (Updated)
+Working
+The logic is same as the previous method with the only difference that –
+
+Rather than iterating on the whole string, we iterate on half of the string input.
+
+Since, if the string is a palindrome, the first half will be the same as the second half from the end.
+
+Run
+# we do not need to check the whole string
+# only till the mid of string
+# as if it palindrome the first half == second half of string when read backwards
+def checkPalindrome(str):
+
+    # Run loop from 0 to len/2
+    mid = int(len(str) / 2)
+
+    for i in range(0, mid):
+        if str[i] != str[len(str) - i - 1]:
+            return False
+
+    return True
+
+
+# main function
+s = "kayak"
+
+print("Palindrome") if checkPalindrome(s) else print("Not Palindrome")
+Output
+ Palindrome
+
+**Method 6: Using In-Built reversed function
+Working
+Use the following –
+
+reverse = ”.join(reversed(str))
+
+Run
+def checkPalindrome(str):
+    # using inbuilt reversed function
+    reverse = ''.join(reversed(str))
+
+    if str == reverse:
+        return True
+
+    return False
+
+
+# main function
+s = "kayak"
+
+print("Palindrome") if checkPalindrome(s) else print("Not Palindrome")
+Output
+ Palindrome
+
+**Method 7: Building reverse one char at a time
+The explanation is given in the comments section of the code below –
+
+Run
+string = "123"
+# this will automatically generate reverse
+rev = ""
+for char in string:
+    rev = char + rev
+
+print("Palindrome") if string == rev else print("Not Palindrome")
+
+print("string: " + str(string))
+print("rev: " + str(rev))
+Output
+Not Palindrome
+string: 123
+rev: 321
+Method 8: Using Flag
+The explanation is given in the comments section of the code below –
+
+Run
+string = "radar"
+
+j = -1
+flag = 0
+for char in string:
+    # char starts from index 0
+    # string[j] forces to read from end
+    # bcz negative index are read from end
+    if char != string[j]:
+        flag = 1
+        break
+    j = j - 1
+
+print(string + " is : ", end="")
+print("Not Palindrome") if flag else print("Palindrome")
+Output
+radar is : Palindrome
+
+**Method 8: Bonus using backward slicing
+We use backward looping/slicing in a for loop here
+
+Run
+str1 = "radar"
+n = len(str1)
+c = []
+for i in range(n - 1, -1, -1):
+    c.append(str1[i])
+
+rev = "".join(c)
+
+print(str1 + " is: ", end="")
+if str1 == rev:
+    print("Palindrome")
+else:
+    print("Not Palindrome")
+Output
+radar is : Palindrome
