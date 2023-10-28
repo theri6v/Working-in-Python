@@ -1,0 +1,84 @@
+Here, in this page we will discuss the program to reverse an array using python programming language. We will discuss different approaches to reverse the array in this page and compare the complexity of different approaches.
+
+Different Approaches :
+Method 1 : Using Swapping
+Method 2 : Using Recursion
+Method 3 : Using Python List slicing
+ 
+-------------------------------------------------------------------------Method 1 :-------------------------------------------------------------------------
+
+Take two variables say start = 0 and end= arr.len()-1
+Run a loop till start < end
+Swap arr[start] with arr[end]
+Increment start and decrement end by 1
+Print array
+Example :
+Let's array is arr[5] = [10, 20, 30, 40, 50] n = 5
+i = 0, j = 4
+As (0 is less than 4) swap(arr[0],arr[4])
+arr[0]=50 and arr[4]=10, i++(i.,e i=1) and j--(i.e, j=3)
+Again (1 is less than 3) swap(arr[1],arr[3])
+arr[1]=40 and arr[3]=20, i++(i.,e i=2) and j--(i.e, j=2)
+Now, i is not less than j (as i=2 and j=2) so loop gets terminate and original array get reversed.
+Reverse the array in python
+
+Method 1 : Code in Python
+
+def reverseList(A, start, end):
+  while start < end:
+    A[start], A[end] = A[end], A[start]
+    start += 1
+    end -= 1
+# Driver function to test above function
+A = [10, 20, 30, 40, 50]
+reverseList(A, 0, 4)
+print(A)
+Output
+[50, 40, 30, 20, 10]
+Related Pages
+Find Second Smallest Element in an Array
+
+Calculate the sum of elements in an array
+
+Sort first half in ascending order and second half in descending 
+
+Sort the elements of an array
+
+Finding the frequency of elements in an array
+
+-------------------------------------------------------------------------Method 2 :-------------------------------------------------------------------------
+
+Create a recursive function reverseList and pass array , start and end index of array.
+Recursively call the function reverseList.
+
+Method 2 : Code in Python
+
+def reverseList(A, start, end):
+   if start >= end:
+      return
+   A[start], A[end] = A[end], A[start]
+   reverseList(A, start+1, end-1)
+
+
+# Driver function to test above function
+A = [10, 20, 30, 40, 50]
+reverseList(A, 0, 4)
+print(A)
+Output
+[50, 40, 30, 20, 10]
+
+-------------------------------------------------------------------------Method 3 :-------------------------------------------------------------------------
+
+In this method we reverse the array using list slicing
+
+Method 3 : Code in Python
+
+
+def reverseList(A):
+  print( A[::-1])
+
+# Driver function to test above function
+A = [10, 20, 30, 40, 50]
+reverseList(A)
+Output
+[50, 40, 30, 20, 10]
