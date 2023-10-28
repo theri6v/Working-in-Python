@@ -1,0 +1,83 @@
+Here, in this page we will discuss the program to find the duplicate in an array of N+1 integers in C++ . We are Given an array of integers Arr containing N+1 integers where each integer is in the range [1, N] inclusive.
+
+Duplicate in an array of N+1 integers in C++
+Algorithm :
+Take the size of the array from the user and store it on variable say n.
+Declare an array of size N and take N elements from the user.
+Declare a map which holds the frequency of the elements present in the array.
+Now, iterate over the array and store the frequency of elements in the array in the map.
+Now, iterate the map and print those keys which have value greater than 1.
+Duplicate in an array of N+1 integers
+Code in C++
+#include <bits/stdc++.h>
+using namespace std;
+
+int main ()
+{
+
+  int n;
+  cin >> n;
+
+  int arr[n];
+
+  for (int i = 0; i < n; i++) 
+  cin >> arr[i];
+
+  map < int, int >mp;
+
+  for (int i = 0; i < n; i++) 
+     mp[arr[i]]++; 
+
+  for (auto it = mp.begin (); it != mp.end (); it++) 
+    { 
+          if (it->second > 1)
+	  cout << it->first << " ";
+    }
+  return 0;
+}
+Output
+
+Output :
+
+5
+
+1 1 2 5 5
+
+1 5
+Efficient Algorithm  to find duplicate in an array of N+1 integers in C++ :
+Traverse the given array from 0 to n.
+For every element in the array increment the (arr[i]-1)%n‘th element by n.
+Now traverse the array again and print all those indices i for which (arr[i]-1)/n is greater than 2. Which guarantees that the number n has been added to that index.
+#include <iostream>
+using namespace std;
+
+// function to find repeating elements
+void printRepeating(int arr[], int n)
+{
+  for (int i = 0; i < n; i++)
+  {
+     int index = (arr[i]-1) % n;
+     arr[index] += n;
+  }
+
+  for (int i = 0; i < n; i++) 
+    { 
+       if (((arr[i]-1) / n) >= 2)
+       cout << i+1 << " "; 
+    } 
+} 
+// Driver code 
+  int main() 
+ { 
+  int n; 
+  cin>>n;
+
+  int arr[n];
+
+  for(int i=0; i<n; i++) cin>>arr[i];
+  cout << "The repeating elements are: \n";
+
+  // Function call
+  printRepeating(arr, n);
+  return 0;
+}
