@@ -1,0 +1,107 @@
+Here, in this page we will discuss the program for counting distinct elements in python programming language. We are given with an array and need to print the count of distinct element present in the given array.
+
+Example
+Input : arr[8] = [10, 20, 40, 30, 50, 20, 10, 20]
+Output : 5 
+Explanation : 10, 20, 30, 40, 50 are the distinct elements.
+Here, we will discuss two different methods to count the unique element in the given input array and compare there time and space complexity of these two methods.
+
+Method 1 : Using Two loops
+Method 2 : Using Dictionary
+
+------------------------------------------------------------------------Method 1 :------------------------------------------------------------------------
+
+In this method we will count the frequency of each elements using two for loops.
+
+To check the status of visited elements create a array of size n and a variable say count_dis=0 which will count all distinct elements.
+Run a loop from index 0 to n and check if (visited[i]==1) then skip that element.
+Run a loop from index i+1 to n
+Check if(arr[i]==arr[j]), then set visited[j]=1.
+After complete iteration of inner for loop, increment the value of count_dis by 1.
+At last print the value of count_dis.
+Time and Space Complexity :
+Time Complexity : O(n2)
+Space Complexity : O(n)
+
+Method 1 : Code in Python
+
+# Python 3 program to count unique elements
+def count(arr, n):
+
+   # Mark all array elements as not visited
+    visited = [False for i in range(n)]
+    count_dis=0
+
+   # Traverse through array elements
+   # and count frequencies
+    for i in range(n):
+     # Skip this element if already
+     # processed
+        if (visited[i] == True):
+          continue
+
+     # Count frequency
+        for j in range(i + 1, n, 1):
+            if (arr[i] == arr[j]):
+                visited[j] = True
+         
+        count_dis = count_dis+1;
+   
+    print(count_dis)
+
+# Driver Code
+arr = [10, 30, 40, 20, 10, 20, 50, 10]
+n = len(arr)
+count(arr, n)
+
+Output
+5
+
+Sorting elements of an array by frequency
+
+Finding the Longest Palindrome in an Array
+
+Finding  Repeating elements in an Array
+
+Finding Non Repeating elements in an Array
+
+Removing Duplicate elements from an array
+
+------------------------------------------------------------------------Method 2 :------------------------------------------------------------------------
+
+In this method we will count use dictinary to count the frequency of each elements and then check if that frequency is equal to 1 or not.
+
+Declare a dictionary dict() and a variable say count_dis=0.
+Start iterating over the entire array
+If element is present in map, then increase the value of frequency by 1.
+Otherwise, insert that element in map.
+After complete iteration over array, start traversing map and check if value is equal to 1, if it is then increment the value of  count_dis by 1.
+At last print the value of count_dis.
+Time and Space Complexity :
+Time Complexity : O(n)
+Space Complexity : O(n)
+
+Method 2 : Code in Python
+
+def count(arr, n):
+
+    mp = dict()
+    count_dis=0
+    # Traverse through array elements
+    # and count frequencies
+
+    for i in range(n):
+        if arr[i] in mp.keys():
+            mp[arr[i]] += 1
+        else:
+            mp[arr[i]] = 1
+
+    print(len(mp))
+
+# Driver Code 
+arr = [10, 30, 40, 20, 10, 20, 50, 10] 
+n = len(arr) 
+count(arr, n)
+
+Output
+5
