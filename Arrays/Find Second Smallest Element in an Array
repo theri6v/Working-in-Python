@@ -1,0 +1,93 @@
+Here, in this page we will discuss the program to find the second smallest element in an array using python programming language. We will discuss various method to find the second smallest element of the given array.
+
+ 
+
+Various methods to discussed in this page are :
+Method 1 : Using two loops
+Method 2 : Using one loop
+Method 3 : Using sort() function.
+ 
+-----------------------------------------------------------------------------Method 1 :-----------------------------------------------------------------------------
+
+Take a variable say first and set it to integer maximum value.
+Run a loop for range (0, len(arr))
+Check if first > arr[i], set first = arr[i]
+Now, declare a variable say second and set it to integer maximum value.
+Run a loop for range (0, len(arr))
+Check if ( arr[i] != first and arr[i]<second), set second = arr[i]
+Print(second)
+
+Method 1 : Python code
+
+import math
+
+arr = [10, 13, 17, 11, 34, 21]
+first = math.inf
+second = math.inf
+
+for i in range(0, len(arr)):
+   if arr[i] < first:
+     first = arr[i]
+
+for i in range(0, len(arr)):
+   if arr[i] != first and arr[i] < second:
+     second = arr[i]
+
+print(second)
+
+Output :
+11
+
+Find Smallest Element in an Array
+ 
+Find the Smallest and largest element in an array
+
+Calculate the sum of elements in an array 
+
+Reverse an Array
+
+Sort first half in ascending order and second half in descending 
+
+-----------------------------------------------------------------------------Method 2 :-----------------------------------------------------------------------------
+
+Take two variable say first and second, set them to integer maximum value.
+Run a loop for range (0, len(arr))
+Check if first > arr[i], set second = first and first = arr[i]
+Else Check if ( arr[i] != first and arr[i]<second), set second = arr[i]
+Print(second)
+
+Method 2 : Python code
+
+import math
+
+arr = [10, 13, 17, 11, 34, 21]
+first = second = math.inf
+
+for i in range(0, len(arr)):
+  if arr[i] < first:
+    second = first
+    first = arr[i]
+
+  elif (arr[i] < second and arr[i] != first):
+    second = arr[i];
+
+print(second)
+
+Output :
+11
+
+-----------------------------------------------------------------------------Method 3 :-----------------------------------------------------------------------------
+
+Sort the array using inbuilt sort() function.
+sort(), sort the array in ascending order.
+So, to print the second smallest element of the array print arr[1].
+ 
+Second smallest element
+Method 3 : Python code
+Run
+import math
+arr = [10, 13, 17, 11, 34, 21]
+arr.sort();
+print(arr[1])
+Output :
+11
