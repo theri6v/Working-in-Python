@@ -1,0 +1,126 @@
+Here, in this page we will discuss the program to find the longest palindrome in an array in python programming language, we will discuss two different methods to find the longest palindromic element in the given array.
+
+ 
+
+Here in this page we will discuss the following methods to find the longest palindromic number.
+
+Method 1 : Using Naive Approach
+Method 2 : Using Sorting
+
+-------------------------------------------------------------------------Method 1 :-------------------------------------------------------------------------
+
+Create a function ispalindrome(int n), it will return 1 if the passing number is palindrome otherwise return 0.
+Inside the main function, create a variable say res = -1, that hold the maximum palindrome number.
+Run a loop from [0, n),  and check if(ispalindrome(arr[i]) && res<arr[i]), then set res = arr[i].
+Print the value of res.
+Longest Palindrome in an array
+Related Pages
+Finding the frequency of elements in an array
+
+Sorting elements of an array by frequency
+
+Counting Distinct Elements in an Array
+
+Finding  Repeating elements in an Array
+
+Finding Non Repeating elements in an Array
+
+Method 1 : Code in Python
+
+# Function to check if n is palindrome
+def isPalindrome(n):
+
+   divisor = 1
+   while (int(n / divisor) >= 10):
+      divisor *= 10
+
+   while (n != 0):
+      leading = int(n / divisor)
+      trailing = n % 10
+  
+      if (leading != trailing):
+        return False
+
+      n = int((n % divisor) / 10)
+
+      divisor = int(divisor / 100)
+   return True
+
+# Function to find the largest palindromic element
+def largestPalindrome(arr, n):
+   currentMax = -1
+
+   for i in range(0, n, 1):
+      if (arr[i] > currentMax and isPalindrome(arr[i])):
+         currentMax = arr[i]
+
+   return currentMax
+
+# Driver Code
+
+arr = [1, 232, 5545455, 909090, 161]
+n = len(arr)
+
+# print required answer
+print(largestPalindrome(arr, n))
+Output
+5545455
+
+
+
+
+-------------------------------------------------------------------------Method 2 :-------------------------------------------------------------------------
+
+In this method we first sort the array and then start traversing the array from end, and return the element that satisfy the condition, that it is palindrome.
+
+Sort the array using inbuilt sort() function.
+Start traversing from end of the array,
+Print the element if it is palindrome.
+If no element found then print -1.
+About sort() function in Python
+The sort() method is a built-in Python method that, by default, sorts the list in ascending order. 
+However, you can modify the order from ascending to descending by specifying the sorting criteria.
+array_name.sort(reverse=True|False, key=myFunc) , this will sort the array in descending order.
+
+Method 2 : Code in Python
+
+# Function to check if n is palindrome
+def isPalindrome(n):
+
+   divisor = 1
+   while (int(n / divisor) >= 10):
+      divisor *= 10
+
+   while (n != 0):
+      leading = int(n / divisor)
+      trailing = n % 10
+  
+      if (leading != trailing):
+        return False
+
+      n = int((n % divisor) / 10)
+
+      divisor = int(divisor / 100)
+   return True
+
+# Function to find the largest palindromic element
+def largestPalindrome(A, n) :
+    # Sort the array
+    A.sort()
+
+    for i in range(n - 1, -1, -1) :
+        # If number is palindrome
+        if (isPalindrome(A[i])) :
+            return A[i]    
+
+    # If no palindromic number found
+    return -1
+
+# Driver Code 
+arr = [1, 232, 5545455, 909090, 161]
+n = len(arr) 
+# print required answer 
+print(largestPalindrome(arr, n))
+
+Output
+5545455
