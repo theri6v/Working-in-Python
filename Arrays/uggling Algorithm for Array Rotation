@@ -1,0 +1,67 @@
+We’ll learn about Python program to find Juggling algorithm for array rotation  which is one of the effective algorithms used for array rotation is the juggling algorithm. Now, let’s discuss the juggling algorithm and a program using the juggling algorithm to rotate an array.
+
+Python program to find Juggling algorithm for array rotation
+Keypoint
+In this section we will learn about basic knowledge which we need to know before coding the above Program. So we must have knowledge of what is an array? 
+
+What is an array?
+An array is a data structure, it is collection of similar data elements which is stored at contiguous memory locations in which each data element can be accessed directly by only using its index number.
+ 
+About Python language:-
+Python is a popular programming language. Python is a high level language that will make a programmer focus on what to do instead of how to do.
+Its design philosophy emphasizes code readability with its use of significant indentation. Its language constructs as well as its object-oriented approach aim to help programmers write clear, logical code for small and large-scale 
+ 
+ 
+How to declare an array?
+To declare an array in C,a programmer specifies the type of the elements and the number of elements required by an array as follows − This is called a single-dimensional array. The arraySize must be an integer constant greater than zero and type can be any valid C data type. For example, to declare a 10-element array called balanceof type double, use this statement − Here balanceis a variable array which is sufficient to hold up to 10 double numbers.
+Algorithm
+Step 1- In this method, divide the array into M sets, where M = GCD (n, k), and then rotate the elements in each set.
+
+Step 2-From the number of elements ( n ) of the array and number of rotations ( k ) to be made to the array, the GCD(n, k) number of blocks are made.
+
+Step 3- Then in each block, shifting will take place to the corresponding elements in the block.
+
+Step 4- After all the elements in all the blocks are shifted, the array will be rotated for the given number of times.
+
+Step 5- For Example: If we want to rotate the below array by 2 positions.
+
+10 20 30 40 50 60
+
+M = GCD(6, 2) = 2;
+Initial Array : 10 20 30 40 50 60
+First Set Moves : 50 20 10 40 30 60
+Second Set Moves : 50 60 10 20 30 40
+ 
+Juggling algorithm for array rotation python
+Juggling Algorithm (Array Rotation In Place) Python
+Python program to find Juggling algorithm for array rotation
+---------------------------------------------------------------------------------------------------------------------------------------------------------------------------------
+import math
+def leftRotate(arr, d, n): 
+     for i in range(math.gcd(d, n)): 
+         temp = arr[i] 
+         j = i 
+         while 1: 
+             k = j + d 
+             if k >= n:
+                 k = k - n 
+             if k == i: 
+                 break
+             arr[j] = arr[k] 
+             j = k 
+             arr[j] = temp 
+arr =list(map(int,input("ENTER ARRAY ELEMENTS ").split()))
+n = len(arr)
+no_of_rotations = 2
+
+print("Array Elements before rotation : ")
+print(*arr) 
+leftRotate(arr, no_of_rotations, n )
+print("\nArray Elements after rotation : ")
+print(*arr)
+ENTER ARRAY ELEMENTS 3 1 2 3
+Array Elements before rotation : 
+3 1 2 3
+
+Array Elements after rotation : 
+2 3 3 1
